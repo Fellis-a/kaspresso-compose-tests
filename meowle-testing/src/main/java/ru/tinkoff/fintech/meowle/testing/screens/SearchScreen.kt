@@ -62,6 +62,14 @@ class SearchScreen(testContext: TestContext<*>) : BaseScreen(testContext) {
         }
     }
 
+    fun openFirstCatDetails() {
+        step("Открываем детали первого котика") {
+            catsList.childAt<CatCard>(0) {
+                this.catName.click()
+            }
+        }
+    }
+
     fun checkScreenOpened() {
         step("Проверяем что экран открылся") {
             title.isDisplayed()

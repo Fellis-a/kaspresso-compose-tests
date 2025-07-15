@@ -13,11 +13,20 @@ object SearchResponseFactory {
         return SearchResponseDto(
             listOf(
                 LetterGroup(
-                    title = "П",
+                    title = "Б",
                     cats = listOf(
                         CatDto(
                             id = 1,
-                            name = "Пушок",
+                            name = "Барсик",
+                            description = "Рыжий кот",
+                            tags = "",
+                            gender = "male",
+                            likes = 32,
+                            dislikes = 2
+                        ),
+                        CatDto(
+                            id = 2,
+                            name = "Борис",
                             description = "Белый пушистый кот",
                             tags = "",
                             gender = "male",
@@ -25,8 +34,8 @@ object SearchResponseFactory {
                             dislikes = 2
                         ),
                         CatDto(
-                            id = 2,
-                            name = "Пушистик",
+                            id = 3,
+                            name = "Бегемот",
                             description = "Рыжий пушистый кот",
                             tags = "",
                             gender = "male",
@@ -34,16 +43,17 @@ object SearchResponseFactory {
                             dislikes = 2
                         ),
                         CatDto(
-                            id = 3,
-                            name = "Пухляш",
+                            id = 4,
+                            name = "Бобик",
                             description = "Черный пухлый кот",
                             tags = "",
                             gender = "male",
                             likes = 32,
                             dislikes = 2
-                        )
+                        ),
+
                     ),
-                    count = 3
+                    count = 4
                 )
             )
         )

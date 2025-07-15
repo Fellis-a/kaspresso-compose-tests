@@ -12,12 +12,26 @@ object DetailsResponseFactory {
         return CatByIdResponseDto(
             cat = CatDto(
                 id = 1,
-                name = "Пушок",
-                description = "Белый пушистый кот",
+                name = "Барсик",
+                description = "Рыжий кот",
                 tags = "",
                 gender = "male",
-                likes = 1,
+                likes = 32,
                 dislikes = 2
+            )
+        )
+    }
+
+    fun success(description: String = "Серый кот с зелёными глазами"): CatByIdResponseDto {
+        return CatByIdResponseDto(
+            cat = CatDto(
+                id = 5,
+                name = "Мурзик",
+                description = description,
+                tags = "",
+                gender = "male",
+                likes = 15,
+                dislikes = 1
             )
         )
     }

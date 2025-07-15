@@ -11,6 +11,10 @@ object MeowleMock {
     val search = SearchMock()
     val details = DetailsMock()
     val photos = PhotosMock()
+    val rating = RatingMock()
+    val likes = LikesMock()
+    val addCat = AddCatMock()
+    val editCat = EditCatMock()
 
     //scenarios
     val meowleScenario = MockScenario()

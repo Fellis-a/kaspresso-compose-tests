@@ -38,4 +38,5 @@ dependencies {
     implementation(libs.allure.kotlin.junit4)
     implementation(libs.allure.kotlin.android)
     implementation(libs.wiremock)
+    implementation(libs.google.material)
 }

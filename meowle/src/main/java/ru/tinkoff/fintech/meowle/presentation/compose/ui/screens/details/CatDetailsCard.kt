@@ -23,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -72,7 +73,8 @@ fun CatDetailsCard(
                 Text(
                     text = "${cat.name}, ",
                     style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.testTag("catName")
                 )
                 CatGenderIcon(gender = cat.gender)
             }
@@ -134,7 +136,8 @@ fun CatDetailsCard(
                     style = MaterialTheme.typography.titleSmall,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.testTag("catDescription")
                 )
                 Spacer(
                     modifier = Modifier
@@ -142,7 +145,8 @@ fun CatDetailsCard(
                 )
                 Button(
                     onClick = onEditButtonClicked,
-                    shape = MaterialTheme.shapes.medium
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.testTag("editButton")
                 ) {
                     Text(
                         text = stringResource(R.string.details_change_description_button),

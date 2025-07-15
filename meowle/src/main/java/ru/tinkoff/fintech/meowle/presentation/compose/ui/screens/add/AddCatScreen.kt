@@ -38,6 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.ramcosta.composedestinations.annotation.Destination
@@ -119,6 +120,7 @@ private fun AddCatScreenContent(
                 start = MaterialTheme.spacing.medium,
                 end = MaterialTheme.spacing.medium
             )
+            .testTag("addCatScreen")
     ) {
 
         val singlePhotoPickerLauncher = rememberLauncherForActivityResult(
@@ -190,6 +192,7 @@ private fun AddCatScreenContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = MaterialTheme.spacing.small)
+                .testTag("catNameField")
         )
 
         MeowleDropdownMenu(
@@ -233,6 +236,7 @@ private fun AddCatScreenContent(
                 unfocusedContainerColor = MaterialTheme.colorScheme.surfaceBright,
             ),
             modifier = Modifier
+                .testTag("catDescriptionField")
                 .fillMaxWidth()
                 .padding(top = MaterialTheme.spacing.medium)
         )
@@ -245,6 +249,7 @@ private fun AddCatScreenContent(
             onClick = onAddCat,
             shape = MaterialTheme.shapes.medium,
             modifier = Modifier
+                .testTag("addCatButton")
                 .fillMaxWidth()
                 .padding(bottom = MaterialTheme.spacing.large)
         ) {

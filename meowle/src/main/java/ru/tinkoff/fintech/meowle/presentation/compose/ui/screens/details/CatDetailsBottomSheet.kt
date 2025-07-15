@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.testTag
 import kotlinx.coroutines.launch
 import ru.tinkoff.fintech.meowle.R
 import ru.tinkoff.fintech.meowle.presentation.compose.ui.theme.MeowleTheme
@@ -81,15 +82,16 @@ private fun CatDetailsBottomSheetContent(
                     style = MaterialTheme.typography.bodyLarge
                 )
             },
-            maxLines = 5,
             modifier = Modifier
                 .padding(MaterialTheme.spacing.medium)
+                .testTag("descriptionField")
         )
         Button(
             onClick = onSaveCatDescription,
             shape = MaterialTheme.shapes.small,
             modifier = Modifier
                 .padding(MaterialTheme.spacing.medium)
+                .testTag("saveButton")
         ) {
             Text(
                 text = stringResource(R.string.details_bottom_sheet_save_button),

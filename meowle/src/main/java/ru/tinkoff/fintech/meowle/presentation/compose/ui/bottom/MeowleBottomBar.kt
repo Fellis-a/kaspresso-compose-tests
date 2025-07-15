@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.testTag
 import com.ramcosta.composedestinations.generated.destinations.SearchScreenDestination
 import com.ramcosta.composedestinations.spec.DestinationSpec
 import com.ramcosta.composedestinations.spec.DirectionDestinationSpec
@@ -32,6 +33,7 @@ fun MeowleBottomBar(
             containerColor = MaterialTheme.colorScheme.background,
             modifier = Modifier
                 .fillMaxWidth()
+                .testTag("bottomNavigation")
         ) {
             BottomBarDestination.entries.forEach { destination ->
                 val isSelected = currentDestination == destination.direction
@@ -62,6 +64,7 @@ fun MeowleBottomBar(
                             )
                         }
                     },
+                    modifier = Modifier.testTag(getTestTagForDestination(destination))
                 )
             }
         }
@@ -78,5 +81,15 @@ private fun MeowleBottomBarPreview() {
         MeowleBottomBar(
             currentDestination = SearchScreenDestination,
         ) {  }
+    }
+}
+
+private fun getTestTagForDestination(destination: BottomBarDestination): String {
+    return when (destination) {
+        BottomBarDestination.SEARCH -> "searchTab"
+        BottomBarDestination.RATING -> "ratingTab"
+        BottomBarDestination.ADD_CAT -> "addCatTab"
+        BottomBarDestination.FAVOURITES -> "favouriteTab"
+        BottomBarDestination.SETTINGS -> "settingsTab"
     }
 }

@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.testTag
 import ru.tinkoff.fintech.meowle.R
 import ru.tinkoff.fintech.meowle.domain.cat.Vote
 import ru.tinkoff.fintech.meowle.presentation.compose.ui.dropShadow
@@ -60,11 +61,17 @@ private fun RatingTab(
     vote: Vote,
     onTabClick: (Vote) -> Unit
 ) {
+    val testTag = when (vote) {
+        Vote.LIKES -> "likesTab"
+        Vote.DISLIKES -> "dislikesTab"
+    }
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
             .height(RATING_TAB_HEIGHT)
+            .testTag(testTag)
     ) {
         val title = when (vote) {
             Vote.LIKES -> stringResource(id = R.string.rating_tab_likes_title)
